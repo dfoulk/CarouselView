@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.1" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarouselView\CarouselView.FormsPlugin.Abstractions\CarouselView.FormsPlugin.Abstractions.csproj" />
