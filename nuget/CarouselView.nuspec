@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>CarouselView.FormsPlugin</id>
+        <id>Chi.CarouselView.FormsPlugin</id>
         <version>5.2.0</version>
         <title>CarouselView Control for Xamarin Forms</title>
-        <authors>Alex Rainman</authors>
+        <authors>Alex Rainman, Derek Foulk</authors>
         <owners>Alex Rainman</owners>
-        <licenseUrl>https://github.com/alexrainman/CarouselView/blob/master/README.md</licenseUrl>
-        <projectUrl>https://github.com/alexrainman/CarouselView</projectUrl>
+        <licenseUrl>https://github.com/dfoulk/CarouselView/blob/master/README.md</licenseUrl>
+        <projectUrl>https://github.com/dfoulk/CarouselView</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Create Horizontal and Vertical carousels, add page indicators, navigation arrows and much more. “How to” at Github repository.</description>
         <summary>CarouselView Control for Xamarin Forms</summary>
