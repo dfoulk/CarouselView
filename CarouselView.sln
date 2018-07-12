@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselView.FormsPlugin.iOS", "CarouselView\CarouselView.FormsPlugin.iOS\CarouselView.FormsPlugin.iOS.csproj", "{D525F236-6A2D-4010-B1CC-4A4B8581C90B}"
 EndProject
@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselView.FormsPlugin.UW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.UWP", "UWP\Demo.UWP.csproj", "{D1912CD5-0A3E-404C-8CAD-B786742BC926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{12472CC9-6674-41E0-BC33-2066A26F0A3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo", "Demo\Demo.csproj", "{12472CC9-6674-41E0-BC33-2066A26F0A3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselView.FormsPlugin.Abstractions", "CarouselView\CarouselView.FormsPlugin.Abstractions\CarouselView.FormsPlugin.Abstractions.csproj", "{36E4C107-3B10-4DC6-8E6A-BA251DC3BAF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarouselView.FormsPlugin.Abstractions", "CarouselView\CarouselView.FormsPlugin.Abstractions\CarouselView.FormsPlugin.Abstractions.csproj", "{36E4C107-3B10-4DC6-8E6A-BA251DC3BAF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarouselView.FormsPlugin.Abstractions.Portable", "CarouselView\CarouselView.FormsPlugin.Abstractions.Portable\CarouselView.FormsPlugin.Abstractions.Portable.csproj", "{B624A99C-4A92-4308-A197-8C43CF08118B}"
 EndProject
@@ -373,6 +373,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4608AA3-2996-496D-AD13-A1BCB7F7B6B4}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		version = 3.1.1
