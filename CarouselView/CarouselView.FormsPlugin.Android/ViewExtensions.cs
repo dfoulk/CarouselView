@@ -14,10 +14,12 @@ namespace CarouselView.FormsPlugin.Android
 
             // NullReferenceException during swiping #314 (ScrollView)
             if (Platform.GetRenderer(view) == null || Platform.GetRenderer(view)?.Tracker == null)
-				Platform.SetRenderer(view, Platform.CreateRenderer(view));
-            
+#pragma warning disable 618
+                Platform.SetRenderer(view, Platform.CreateRenderer(view));
+#pragma warning restore 618
+
 			var vRenderer = Platform.GetRenderer(view);
-            
+
             var viewGroup = vRenderer.View;
 
             vRenderer.Tracker?.UpdateLayout ();
