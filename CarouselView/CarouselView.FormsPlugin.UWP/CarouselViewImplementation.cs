@@ -34,7 +34,7 @@ namespace CarouselView.FormsPlugin.UWP
 
         double ElementWidth;
         double ElementHeight;
-        
+
         // To hold all the rendered views
         ObservableCollection<FrameworkElement> Source;
 
@@ -75,7 +75,7 @@ namespace CarouselView.FormsPlugin.UWP
                 }*/
 
                 if (Element == null) return;
-                
+
                 if (Element.ItemsSource != null && Element.ItemsSource is INotifyCollectionChanged)
                     ((INotifyCollectionChanged)Element.ItemsSource).CollectionChanged -= ItemsSource_CollectionChanged;
             }
@@ -111,7 +111,7 @@ namespace CarouselView.FormsPlugin.UWP
 			if (e.Action == NotifyCollectionChangedAction.Move)
 			{
                 if (Element == null || flipView == null || Source == null) return;
-				
+
                 var obj = Source[e.OldStartingIndex];
                 Source.RemoveAt(e.OldStartingIndex);
 				Source.Insert(e.NewStartingIndex, obj);
@@ -133,7 +133,7 @@ namespace CarouselView.FormsPlugin.UWP
 			if (e.Action == NotifyCollectionChangedAction.Reset)
 			{
                 if (Element == null) return;
-				
+
                 SetPosition();
 				SetNativeView();
 
@@ -167,7 +167,7 @@ namespace CarouselView.FormsPlugin.UWP
         private void Element_SizeChanged(object sender, EventArgs e)
         {
             if (Element == null) return;
-            
+
             var rect = Element.Bounds;
 
             if (nativeView == null)
@@ -270,13 +270,13 @@ namespace CarouselView.FormsPlugin.UWP
                     FlipView_Loaded(flipView, null);
                     break;
                 case "ArrowsBackgroundColor":
-                    
+
                     break;
                 case "ArrowsTintColor":
-                    
+
                     break;
                 case "ArrowsTransparency":
-                    
+
                     break;
             }
         }
@@ -504,7 +504,7 @@ namespace CarouselView.FormsPlugin.UWP
         void InsertPage(object item, int position)
 		{
             if (Element == null || flipView == null || Source == null) return;
-			
+
             if (position <= Element.Position)
             {
                 isChangingPosition = true;
@@ -561,7 +561,7 @@ namespace CarouselView.FormsPlugin.UWP
 					}
 
                     Source.RemoveAt(position);
-                    
+
 					Element.Position = flipView.SelectedIndex;
 
 					Dots?.RemoveAt(position);
@@ -601,7 +601,7 @@ namespace CarouselView.FormsPlugin.UWP
 				formsView = (Xamarin.Forms.View)dt.CreateContent();
 			}
 			else {
-                
+
                 if (view != null)
                 {
                     formsView = view;
@@ -687,7 +687,7 @@ namespace CarouselView.FormsPlugin.UWP
                 var _child = VisualTreeHelper.GetChild(parent, i);
                 if (_child is Control)
                     _list.Add(_child as Control);
-                _list.AddRange(AllChildren(_child));              
+                _list.AddRange(AllChildren(_child));
             }
             return _list;
         }
@@ -722,7 +722,9 @@ namespace CarouselView.FormsPlugin.UWP
             {
                 base.Dispose(disposing);
             }
+#pragma warning disable 168
             catch (Exception ex)
+#pragma warning restore 168
             {
                 return;
             }

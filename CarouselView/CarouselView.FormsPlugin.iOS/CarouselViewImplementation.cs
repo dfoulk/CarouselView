@@ -14,17 +14,17 @@ using Xamarin.Forms.Platform.iOS;
 
 /*
  * Significant Memory Leak for iOS when using custom layout for page content #125
- * 
+ *
  * The problem:
- * 
+ *
  * To facilitate smooth swiping, UIPageViewController keeps a ghost copy of the pages in a collection named
  * ChildViewControllers.
  * This collection is handled internally by UIPageViewController to keep a maximun of 3 items, but
  * when a custom view is used from Xamarin.Forms side, the views hang in memory and are not collected no matter if
  * internally the UIViewController is disposed by UIPageViewController.
- * 
+ *
  * Fix explained:
- * 
+ *
  * Some code has been added to CreateViewController to return
  * a child controller if exists in ChildViewControllers.
  * Also Dispose has been implemented in ViewContainer to release the custom views.
@@ -86,7 +86,7 @@ namespace CarouselView.FormsPlugin.iOS
 				// Unsubscribe from event handlers and cleanup any resources
 
                 if (Element == null) return;
-				
+
                 Element.SizeChanged -= Element_SizeChanged;
 				if (Element.ItemsSource != null && Element.ItemsSource is INotifyCollectionChanged)
 					((INotifyCollectionChanged)Element.ItemsSource).CollectionChanged -= ItemsSource_CollectionChanged;
@@ -124,7 +124,7 @@ namespace CarouselView.FormsPlugin.iOS
 			if (e.Action == NotifyCollectionChangedAction.Move)
 			{
                 if (Element == null && pageController == null && Source == null) return;
-                    
+
 				Source.RemoveAt(e.OldStartingIndex);
 				Source.Insert(e.NewStartingIndex, e.OldItems[e.OldStartingIndex]);
 
@@ -154,7 +154,7 @@ namespace CarouselView.FormsPlugin.iOS
 				// Remove controller from ChildViewControllers
 				if (ChildViewControllers != null)
 					ChildViewControllers.RemoveAll(c => c.Tag == Source[e.OldStartingIndex]);
-                
+
 				Source[e.OldStartingIndex] = e.NewItems[e.NewStartingIndex];
 
 				var firstViewController = CreateViewController(Element.Position);
@@ -183,7 +183,7 @@ namespace CarouselView.FormsPlugin.iOS
             var rect = this.Element.Bounds;
 			// To avoid extra DataTemplate instantiations #158
             if (rect.Height > 0)
-            { 
+            {
                 ElementWidth = rect.Width;
                 ElementHeight = rect.Height;
                 SetNativeView();
@@ -607,7 +607,7 @@ namespace CarouselView.FormsPlugin.iOS
 		void SetIndicatorsTintColor()
 		{
             if (pageControl == null) return;
-			
+
             pageControl.PageIndicatorTintColor = Element.IndicatorsTintColor.ToUIColor();
 			SetIndicatorsShape();
 		}
@@ -615,7 +615,7 @@ namespace CarouselView.FormsPlugin.iOS
 		void SetCurrentPageIndicatorTintColor()
 		{
             if (pageControl == null) return;
-			
+
             pageControl.CurrentPageIndicatorTintColor = Element.CurrentPageIndicatorTintColor.ToUIColor();
 			SetIndicatorsShape();
 		}
@@ -623,17 +623,17 @@ namespace CarouselView.FormsPlugin.iOS
 		void SetIndicatorsCurrentPage()
 		{
             if (pageControl == null) return;
-			
+
             pageControl.Pages = Count;
 			pageControl.CurrentPage = Element.Position;
 			SetIndicatorsShape();
-			
+
 		}
 
 		void SetIndicatorsShape()
 		{
             if (pageControl == null) return;
-			
+
 			if (Element.IndicatorsShape == IndicatorsShape.Square)
 			{
 				foreach (var view in pageControl.Subviews)
@@ -773,7 +773,7 @@ namespace CarouselView.FormsPlugin.iOS
                 return;
 
             if (Element == null || pageController == null || Element.ItemsSource == null) return;
-            
+
 			if (Element.ItemsSource?.GetCount() > 0)
 			{
 				// Transition direction based on prevPosition
@@ -812,7 +812,7 @@ namespace CarouselView.FormsPlugin.iOS
 
 			if (Source != null && Source?.Count > 0)
 				bindingContext = Source.Cast<object>().ElementAt(index);
-            
+
 			var dt = bindingContext as DataTemplate;
 			// Support for List<View> as ItemsSource
 			var view = bindingContext as View;
@@ -900,7 +900,7 @@ namespace CarouselView.FormsPlugin.iOS
 		void CleanUpPageControl()
 		{
             if (pageControl == null) return;
-			
+
 			pageControl.RemoveFromSuperview();
 			pageControl.Dispose();
 			pageControl = null;
@@ -911,7 +911,7 @@ namespace CarouselView.FormsPlugin.iOS
 			CleanUpPageControl();
 
             if (pageController == null) return;
-			
+
 			/*pageController.DidFinishAnimating -= PageController_DidFinishAnimating;
 			pageController.GetPreviousViewController = null;
 			pageController.GetNextViewController = null;*/
@@ -990,7 +990,9 @@ namespace CarouselView.FormsPlugin.iOS
 		/// <summary>
 		/// Used for registration with dependency service
 		/// </summary>
+#pragma warning disable 108,114
 		public static void Init()
+#pragma warning restore 108,114
 		{
 			var temp = DateTime.Now;
 		}
