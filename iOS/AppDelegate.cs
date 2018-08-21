@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using CarouselView.FormsPlugin.iOS;
-using FFImageLoading.Forms.Touch;
+using FFImageLoading.Forms.Platform;
 
 namespace Demo.iOS
 {

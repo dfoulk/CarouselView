@@ -4,7 +4,7 @@ using Android.Content.PM;
 using Android.Views;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
-using FFImageLoading.Forms.Droid;
+using FFImageLoading.Forms.Platform;
 
 namespace Demo.Droid
 {

@@ -1,5 +1,5 @@
 ﻿using CarouselView.FormsPlugin.UWP;
-using FFImageLoading.Forms.WinUWP;
+using FFImageLoading.Forms.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
