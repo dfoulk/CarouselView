@@ -221,8 +221,15 @@ DownsampleToViewSize="true" DownsampleWidth="WIDTH"
 
 #### Contributors
 * [alexrainman](https://github.com/alexrainman)
+* [dfoulk](https://github.com/dfoulk)
 
 #### Release Notes
+
+5.2.1
+
+[Android] Fix #129 CarouselViewControl not rendered when loading a page from memory bug
+
+[Android] Fix #157 CarouselView Binding breaks when returning to Page bug duplicate
 
 5.2.0
 
