@@ -2,16 +2,19 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>CarouselView.FormsPlugin</id>
-        <version>5.2.0</version>
+        <version>5.2.1</version>
         <title>CarouselView Control for Xamarin Forms</title>
-        <authors>Alex Rainman</authors>
+        <authors>Alex Rainman, Derek Foulk</authors>
         <owners>Alex Rainman</owners>
-        <licenseUrl>https://github.com/alexrainman/CarouselView/blob/master/README.md</licenseUrl>
-        <projectUrl>https://github.com/alexrainman/CarouselView</projectUrl>
+        <licenseUrl>https://github.com/dfoulk/CarouselView/blob/master/README.md</licenseUrl>
+        <projectUrl>https://github.com/dfoulk/CarouselView</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Create Horizontal and Vertical carousels, add page indicators, navigation arrows and much more. “How to” at Github repository.</description>
         <summary>CarouselView Control for Xamarin Forms</summary>
         <releaseNotes>
+5.2.1
+[Android] Fix #129 CarouselViewControl not rendered when loading a page from memory bug
+[Android] Fix #157 CarouselView Binding breaks when returning to Page bug duplicate
 5.2.0
 [Android] NullReferenceException during swiping bug #314
 [Update] Adding scroll direction property to Scrolled event callback
@@ -168,17 +171,26 @@
         </releaseNotes>
         <tags>carouselview carousel pageslider slider viewpager uipageviewcontroller flipview ios android uwp xamarin forms monotouch monodroid</tags>
         <dependencies>
-			 <group targetFramework="MonoAndroid10">
-			    <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+            <group targetFramework="netstandard2.0">
+                <dependency id="Xamarin.Forms" version="2.5.0.122203"/>
+            </group>
+            <group targetFramework="net45">
+                <dependency id="Xamarin.Forms" version="2.5.0.122203"/>
+            </group>
+            <group targetFramework="netcore45">
+                <dependency id="Xamarin.Forms" version="2.5.0.122203"/>
+            </group>
+			<group targetFramework="MonoAndroid10">
+			    <dependency id="Xamarin.Forms" version="2.5.0.122203"/>
 	            <dependency id="Xamarin.Android.Support.v4" version="25.4.0.2"/>
                 <dependency id="Xamarin.Android.CirclePageIndicator" version="1.0.2"/>
                 <dependency id="Xamarin.Android.VerticalViewPager" version="1.0.1"/>
 	        </group>
 	        <group targetFramework="Xamarin.iOS10">
-	            <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+	            <dependency id="Xamarin.Forms" version="2.5.0.122203"/>
 	        </group>
 	        <group targetFramework="UAP10">
-	            <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+	            <dependency id="Xamarin.Forms" version="2.5.0.122203"/>
 	        </group>
 		</dependencies>
     </metadata>
