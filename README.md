@@ -225,6 +225,10 @@ DownsampleToViewSize="true" DownsampleWidth="WIDTH"
 
 #### Release Notes
 
+5.2.2
+
+[iOS] Fix #357 NullReferenceException after rotating device bug
+
 5.2.1
 
 [Android] Fix #129 CarouselViewControl not rendered when loading a page from memory bug
